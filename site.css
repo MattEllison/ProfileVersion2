@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+.site {
+    height: 100%;
+}
+
+nav {
+    height: 20%;
+    /* border: 1px solid black; */
+}
+
+nav ul {
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    justify-content: flex-end;
+    list-style-type: none;
+    /* flex-direction: row-reverse; */
+    height: 100%;
+    width: 80%;
+}
+
+nav li {
+    padding: 10px;
+}
+
+nav li a {
+    text-decoration: none;
+}
+
+.container {
+    height: 80%;
+    padding: 40px;
+}
+
+.container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+    border: 10px solid black;
+    font-size: calc(10px + 1vw);
+    font-size: 10vw;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.container img {
+    max-width: 50%;
+}
+
+.menu_button {
+    display: none;
+}
+
+@media(max-width:500px) {
+    .menu {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 20px;
+    }
+    .menu_button {
+        cursor: pointer;
+        display: block;
+        width: 15vw;
+        z-index: 10;
+    }
+    .menu_items {
+        /* border: 1px solid blue; */
+        background-color: lightblue;
+        border-radius: 3px;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        width: 0;
+        overflow: hidden;
+        font-size: 10vw;
+        /* margin-right: -100px; */
+        /* overflow: hidden; */
+        /* display: none; */
+        transition: width 0.1s;
+    }
+    .menu_button.active~.menu_items {
+        display: flex;
+        /* margin-right: 0; */
+        width: 40%;
+        overflow: visible;
+        /* transition: width 1s; */
+        animation: 1s delay-overflow;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@keyframes delay-overflow {
+    from {
+        overflow: auto
+    }
+}
